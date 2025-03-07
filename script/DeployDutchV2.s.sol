@@ -12,7 +12,7 @@ struct V2DutchOrderDeployment {
 }
 
 contract DeployDutchV2 is Script {
-    address constant PERMIT2 = 0x000000000022D473030F116dDEE9F6B43aC78BA3;
+    address constant PERMIT2 = 0xC5f4c7C1C20532CdCB84dcf9A2B4FfB8F431246C;
 
     function setUp() public {}
 

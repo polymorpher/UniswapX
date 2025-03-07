@@ -14,12 +14,12 @@ contract BlockNumberish {
     address private constant ARB_SYS_ADDRESS = 0x0000000000000000000000000000000000000064;
 
     constructor() {
-        // Set the function to use based on chainid
-        if (block.chainid == ARB_CHAIN_ID) {
-            _getBlockNumberish = _getBlockNumberSyscall;
-        } else {
-            _getBlockNumberish = _getBlockNumber;
-        }
+//        // Set the function to use based on chainid
+//        if (block.chainid == ARB_CHAIN_ID) {
+//            _getBlockNumberish = _getBlockNumberSyscall;
+//        } else {
+        _getBlockNumberish = _getBlockNumber;
+//        }
     }
 
     /// @dev Private function to get the block number on arbitrum

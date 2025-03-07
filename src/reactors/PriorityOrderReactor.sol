@@ -112,9 +112,9 @@ contract PriorityOrderReactor is BaseReactor {
     /// @param baselinePriorityFeeWei the baseline priority fee to be subtracted from calculated priority fee
     /// @return priorityFee the resolved priority fee
     function _getPriorityFee(uint256 baselinePriorityFeeWei) internal view returns (uint256 priorityFee) {
-        if (tx.gasprice < block.basefee) revert InvalidGasPrice();
+        if (tx.gasprice < 100e8) revert InvalidGasPrice();
         unchecked {
-            priorityFee = tx.gasprice - block.basefee;
+            priorityFee = tx.gasprice - 100e8;
             if (priorityFee > baselinePriorityFeeWei) {
                 priorityFee -= baselinePriorityFeeWei;
             } else {
